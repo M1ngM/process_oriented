@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+
+struct Linked
+{
+    /********* Begin *********/
+    //结构体的成员变量
+    int number;
+    float score;
+    Linked *next;
+    
+
+    /********* End *********/
+};
+
+Linked* Create()
+{
+    /********* Begin *********/
+    //创建并返回一个新链表
+    Linked *p1 = new Linked;
+    p1 -> next = NULL;
+    return p1;
+
+    
+    
+    /********* End *********/
+}
+
+void InsertAfter(Linked *node,int num,float sc)
+{
+    /********* Begin *********/
+    //在指定节点后插入一个新节点，内容由 num，sc 参数指定
+   Linked *p = (struct Linked *)malloc(sizeof(struct Linked));
+    p -> next = NULL;
+    if(node ->number == 0){
+        node -> number = num;
+        node -> score = sc;
+    }
+    else{
+        p -> number = num;
+        p -> score = sc;
+        p -> next = node -> next;
+        node -> next = p;
+    }
+    /********* End *********/
+}
+
+void DeleteAfter(Linked *node)
+{
+    /********* Begin *********/
+    //删除此节点之后的一个节点
+    node -> next = node -> next -> next;
+    
+
+    /********* End *********/
+}
+
+Linked* GetByIndex(Linked *head,int index)
+{
+    /********* Begin *********/
+    //返回指定索引处的节点
+int n = index+1;
+    if(n>1){
+        head = head->next;
+        n--;
+    }
+    return head;
+    
+    
+    /********* End *********/
+}
+
+void PrintAll(Linked *head)
+{
+    /********* Begin *********/
+    //按格式打印此链表中所有节点的成员变量
+while(head != NULL){
+        printf("%d %.1f\n",head -> number,head -> score);
+        head = head -> next;
+    }
+    
+    
+    /********* End *********/
+}

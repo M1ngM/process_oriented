@@ -1,0 +1,14 @@
+int Fact(int n)
+{
+    /********* Begin *********/
+    //使用递归计算 n 的阶乘
+      int sum=1; 
+    if (n <= 1){ 
+       sum = 1;
+    } 
+    else{ 
+        sum = n*Fact(n - 1);
+    }     
+    return sum; 
+    /********* End *********/
+}

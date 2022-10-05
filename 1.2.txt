@@ -1,0 +1,16 @@
+#include "usr.h"
+
+int main()
+{
+	int num;
+	float score;
+	cin >> num >> score ;
+    Linked *lk = Create();
+    InsertAfter(lk,num,score);
+	cin >> num >> score ;
+    InsertAfter(GetByIndex(lk,0),num,score);
+	cin >> num >> score ;
+    InsertAfter(GetByIndex(lk,1),num,score);
+    DeleteAfter(GetByIndex(lk,0));
+    PrintAll(lk);
+}

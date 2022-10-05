@@ -1,0 +1,26 @@
+int Max(int a,int b)
+{
+    /********* Begin *********/
+    //找出两个参数中最大的那个并返回
+if (a > b)
+		return a;
+	else
+		return b;
+    
+    
+    /********* End *********/
+}
+
+int Max(int a,int b,int c)
+{
+    /********* Begin *********/
+    //找出三个参数中最大的那个并返回
+    if (b > a)
+		a = b;
+	if (c > a)
+		a = c;
+	return a;
+    
+    
+    /********* End *********/
+}
